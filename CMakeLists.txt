@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
+project(HDLLaneMark)
+find_package(OpenCV REQUIRED)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+add_executable(lanemark main.cpp CurbScanner.cpp defines.cpp DynamicMap.cpp HDLDisplay.cpp LocalMap.cpp StaticMap.cpp stdafx.cpp  )
+target_link_libraries(lanemark ${OpenCV_LIBS})
